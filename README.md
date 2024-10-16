@@ -19,7 +19,8 @@ app.use(function(req, res, next) {
 The fact that it has **font-src 'self' \*** will allow cross site scripting when looking for fonts. This can be done with the @font-face rule.
 
 Now that we know the vulnerability, we should think about what we can do with it. We can see from the file routes->injex.js that there is a very convenient endpoint that accepts GET requests at **/approve/:id/:approvalToken**.
-Let's look at what the approvalToken is then. In helpers->TokenHelper.js we see this:
+Let's look at what the approvalToken is then. 
+In helpers->TokenHelper.js we see this:
 
 ```javascript
 module.exports = {
